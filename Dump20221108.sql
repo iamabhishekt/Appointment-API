@@ -31,9 +31,9 @@ CREATE TABLE `appointment_list` (
   `doctorId` varchar(45) DEFAULT NULL,
   `doctorName` varchar(45) DEFAULT NULL,
   `appointmentDate` varchar(45) DEFAULT NULL,
-  `aDuration` varchar(45) DEFAULT NULL,
-  `aStatus` varchar(45) DEFAULT NULL,
-  `aType` varchar(45) DEFAULT NULL,
+  `appointmentDuration` varchar(45) DEFAULT NULL,
+  `appointmentStatus` varchar(45) DEFAULT NULL,
+  `appointmentType` varchar(45) DEFAULT NULL,
   `caseManagerId` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`appointmentId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -45,11 +45,15 @@ CREATE TABLE `appointment_list` (
 
 LOCK TABLES `appointment_list` WRITE;
 /*!40000 ALTER TABLE `appointment_list` DISABLE KEYS */;
-INSERT INTO `appointment_list` VALUES ('1','12','John Doe','123','Stepehen','11/03/2022','30','True','Virtual','1234'),('bdce0301-95e7-4206-a894-91cfb01da69b','12345','test','22345','Test Doctor','07/03/2022','30','True','virtual','1111');
+
+INSERT INTO `appointment_list` VALUES ('1','12','John Doe','123','Stepehen',
+'11/03/2022','30','True','Virtual','1234'),('bdce0301-95e7-4206-a894-91cfb01da69b',
+'12345','test','22345','Test Doctor','07/03/2022','30','True','virtual','1111');
+
 /*!40000 ALTER TABLE `appointment_list` ENABLE KEYS */;
+
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

@@ -3,7 +3,7 @@ const config ={
     database: "appointment",
     host: "localhost",
     user: "root",
-    password: "adminadmin",
+    password: "admin",
     multipleStatements: true
 }
 
