@@ -1,35 +1,49 @@
 import { v4 as uuidv4 } from "uuid"; // import uuid for different ids
+import connectDb from '../utils/connectionDB.js'; // import usersRoutes
 
 let appointments  = []; // Create empty array for users variable  at start
 
 export const getAppointments = (req, res) => {
   // console.log(appointments); // log appointments
 
-  res.send(appointments);
+  //const appointmentId = req.params.appointmentId;
+    const sql = "SELECT * FROM appointment.appointment_list";
+    connectDb.query(sql,(err, rs)=>{
+        if(err) throw err;
+        res.status(200).json({status:"success",appointment:rs})
+    })
 }; // GET request to root
 
 
 export const createAppointment = (req, res) => {
-
   // console.log('POST ROUTE REACHED'); // POST request to root
-
   // console.log(req.body); // req.body is the data sent from the client
-
-
   const appointment = req.body; // get the data from the client
 
-  appointments.push({ ...appointment, id: uuidv4() }); // push the data to the appointments array (spread all the properties of the appointment and add the id(spread operator))
+  if(appointment != null && appointment != undefined && appointment != []) {
+    const sql = `INSERT INTO appointment.appointment_list (appointmentId,patientId,patientName,doctorId,doctorName,appointmentDate,aDuration,aStatus,aType,caseManagerId)VALUES ('${uuidv4()}','${appointment.patientId}','${appointment.patientName}','${appointment.doctorId}','${appointment.doctorName}','${appointment.appointmentDate}','${appointment.aDuration}','${appointment.aStatus}', '${appointment.aType}','${appointment.caseManagerId}');`
 
-  res.send(`appointment for the ${patient.firstName} added to the database!`);  // Send response with adding name
+  //appointments.push({ ...appointment, id: uuidv4() }); // push the data to the appointments array (spread all the properties of the appointment and add the id(spread operator))
+
+  connectDb.query(sql,(err, rs)=>{
+    if(err) throw err;
+    res.status(200).json({status:"success",appointment:rs})
+})
+}
+   // Send response with adding name
 }; // POST request to root
 
 export const getAppointment = (req, res) => {
   const { id } = req.params; // get the id from the params
 
-  const foundAppointment = appointments.find((appointment) => appointment.id === id); // find the appointment with the id
+  const sql = "SELECT * FROM appointment.appointment_list where appointmentId =(?)";
+  connectDb.query(sql,id,(err, rs)=>{
+    if(err) throw err;
+    res.status(200).json({status:"success",appointment:rs})
+  })
 
-  res.send(foundAppointment); // send the found appointment
 }; // GET  request to root with id
+
 
 export const deleteAppointment = (req, res) => {
   const { id } = req.params; // get the id from the params

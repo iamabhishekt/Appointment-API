@@ -7,7 +7,7 @@ import doctorsRoutes from './routes/doctors.js'; // import doctorsRoutes
 import appointmentsRoutes from './routes/appointments.js'; // import appointmentsRoutes
 
 const app = express(); // Create express app
-const PORT = 5000; // Port to run the server
+const PORT = 27018; // Port to run the server
 
 app.use(bodyParser.json()); // Use body-parser
 
