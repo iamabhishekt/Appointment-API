@@ -46,9 +46,34 @@ CREATE TABLE `appointment_list` (
 LOCK TABLES `appointment_list` WRITE;
 /*!40000 ALTER TABLE `appointment_list` DISABLE KEYS */;
 
-INSERT INTO `appointment_list` VALUES ('1','12','John Doe','123','Stepehen',
-'11/03/2022','30','True','Virtual','1234'),('bdce0301-95e7-4206-a894-91cfb01da69b',
-'12345','test','22345','Test Doctor','07/03/2022','30','True','virtual','1111');
+INSERT INTO `appointment_list` VALUES 
+('1','120','John Doe','1231','Stepehen','11/03/2022','30','True','Virtual','2234'),
+('bdce0301-95e7-4206-a894-91cfb01da69b','12345','test','22345','Test Doctor','07/03/2022','30','True','virtual','1111'),
+('101','121','John cena','1231','Stepehen','11/04/2022','30','True','InPerson','2234'),
+('2','122','John singh','1231','Stepehen','11/04/2022','30','True','Virtual','2234'),
+('3','123','Avtar','1233','Rajesh','11/05/2022','30','True','InPerson','2234'),
+('4','124','Rajesh singh','1233','Rajesh','11/05/2022','30','True','InPerson','2234'),
+('6','125','virk Doe','1235','Ravinder','11/06/2022','30','True','Virtual','2234'),
+('7','126','sintu Doe','1235','Ravinder','11/06/2022','30','True','InPerson','2234'),
+('8','127','simran Dome','1235','Ravinder','11/07/2022','30','True','InPerson','2234'),
+('9','128','saket Dim','1235','Ravinder','11/07/2022','30','True','Virtual','2234'),
+('10','129','narender modi','1239','Sanket','11/12/2022','30','True','InPerson','2221'),
+('11','130','Amit sah','1239','Sanket','11/13/2022','30','True','Virtual','2221'),
+('12','131','Lee carstens','1239','Sanket','11/13/2022','30','True','InPerson','2221'),
+('13','132','raj kumar','1239','Sanket','11/14/2022','30','True','Virtual','2221'),
+('14','133','Sunny Deol','1243','Prabhat','11/14/2022','30','True','InPerson','2221'),
+('15','134','Amrish Puri','1243','Prabhat','11/14/2022','30','True','Virtual','2221'),
+('16','135','Shakti kapoor','1243','Prabhat','11/15/2022','30','True','Virtual','2221'),
+('17','136','Ramesh melody','1243','Prabhat','11/15/2022','30','True','InPerson','2221'),
+('18','137','Suresh Melody','1247','Vashim','11/15/2022','30','True','Virtual','2121'),
+('19','138','Surya sun','1247','Vashim','11/16/2022','30','True','Virtual','2121'),
+('20','139','Chandni devi','1247','Vashim','11/16/2022','30','True','Virtual','2121'),
+('21','140','Manish Balne','1247','Vashim','11/16/2022','30','True','InPerson','2121'),
+('22','141','Dheeraj raj','1251','Sanjay','11/16/2022','30','True','InPerson','2120'),
+('23','142','Abhishek bachan','1251','Sanjay','11/17/2022','30','True','Virtual','2120'),
+('24','143','Jack Daniel','1251','Sanjay','11/17/2022','30','True','Virtual','2120'),
+('25,'144','Indu mati','1251','Sanjay','11/17/2022','30','True','InPerson','2120'),
+('26','145','Sylvie Saini','1251','Sanjay','11/17/2022','30','True','Virtual','2120');
 
 /*!40000 ALTER TABLE `appointment_list` ENABLE KEYS */;
 
