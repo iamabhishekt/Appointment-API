@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "2a555888-527e-46bc-b5ef-9147380d42f3",
+		"name": "sdpm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "848850"
+	},
+	"item": [
+		{
+			"name": "get appointment by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:27018/appointments?param1=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27018",
+					"path": [
+						"appointments"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"patientId\" : 12345,\n\"patientName\" : \"test\",\n\"doctorId\" : \"22345\",\n\"doctorName\" : \"Test Doctor\",\n\"appointmentDate\" : \"07/03/2022\",\n\"aDuration\" : \"30\",\n\"aStatus\" : \"True\",\n\"aType\" : \"virtual\",\n\"caseManagerId\" : 1111\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:27018/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27018",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:27018/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27018",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
