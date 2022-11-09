@@ -50,21 +50,33 @@ export const deleteAppointment = (req, res) => { // DELETE request to root with 
 
   appointments = appointments.filter((appointment) => appointment.id !== id); // filter the appointments array and remove the appointment with the id (it will return false for appointment.id !== id)
 
+  const sql = "DELETE FROM appointment.appointment_list where appointmentId =(?)"; // SQL query
+  connectDb.query(sql,id,(err, rs)=>{ // connect to the database
+    if(err) throw err;
+    res.status(200).json({status:"success",appointment:rs})
+  })
   res.send(`appointment with the id ${id} deleted from the database.`); // send the response with the id
 }; // DELETE request to root with id
 
 export const updateAppointment = (req, res) => {
-  const { id } = req.params ; // get the id from the params
-  const { patientId, patientName, doctorId, doctorName, appointmentDate, appointmentDuration, appointmentStatus, appointmentType, caseManagerId } = req.body; // get the data from the client
+  // const { id } = req.params.id ; // get the id from the params
+  const appointment = req.body; // get the data from the client
 
-
-  const { firstName, lastName, age } = req.body; // get the data from the client
-
-  const appointment = appointments.find((appointment) => appointment.id === id); // find the appointment with the id
-
-  if (firstName) appointment.firstName = firstName; // if firstName is true then change the firstName
-  if (lastName) appointment.lastName = lastName; // if lastName is true then change the lastName
-  if (age) appointment.age = age; // if age is true then change the age
-
+  const sql = `UPDATE appointment.appointment_list SET 
+  patientId = '${appointment.patientId}', patientName = '${appointment.patientName}', doctorId = '${appointment.doctorId}', doctorName = '${appointment.doctorName}', appointmentDate = '${appointment.appointmentDate}', appointmentDuration = '${appointment.appointmentDuration}', appointmentStatus = '${appointment.appointmentStatus}', appointmentType = '${appointment.appointmentType}', caseManagerId = '${appointment.caseManagerId}' WHERE appointmentId = '${appointment.appointmentId}';` // SQL query
+  connectDb.query(sql,(err, rs)=>{ // connect to the database
+    if(err) throw err;
+    res.status(200).json({status:"success",appointment:rs})
+  })
   res.send(`appointment with the id ${id} has been updated.`); // send the response with the id
-} // PATCH request to root with id (update) instead of PUT (replace)
+};// PATCH request to root with id (update) instead of PUT (replace); // PUT request to root with id
+
+
+  // const { firstName, lastName, age } = req.body; // get the data from the client
+
+  // const appointment = appointments.find((appointment) => appointment.id === id); // find the appointment with the id
+
+  // if (firstName) appointment.firstName = firstName; // if firstName is true then change the firstName
+  // if (lastName) appointment.lastName = lastName; // if lastName is true then change the lastName
+  // if (age) appointment.age = age; // if age is true then change the age
+
