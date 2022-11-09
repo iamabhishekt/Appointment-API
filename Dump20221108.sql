@@ -72,9 +72,9 @@ INSERT INTO `appointment_list` VALUES
 ('22','141','Dheeraj raj','1251','Sanjay','11/16/2022','30','True','InPerson','2120'),
 ('23','142','Abhishek bachan','1251','Sanjay','11/17/2022','30','True','Virtual','2120'),
 ('24','143','Jack Daniel','1251','Sanjay','11/17/2022','30','True','Virtual','2120'),
-('25,'144','Indu mati','1251','Sanjay','11/17/2022','30','True','InPerson','2120'),
+('25','144','Indu mati','1251','Sanjay','11/17/2022','30','True','InPerson','2120'),
 ('26','145','Sylvie Saini','1251','Sanjay','11/17/2022','30','True','Virtual','2120'),
-('27,'146','Indu tara','1251','Sanjay','11/18/2022','30','True','InPerson','2120'),
+('27','146','Indu tara','1251','Sanjay','11/18/2022','30','True','InPerson','2120'),
 ('28','147','Kareena Kapoor','1251','Sanjay','11/18/2022','30','True','Virtual','2120');
 
 /*!40000 ALTER TABLE `appointment_list` ENABLE KEYS */;
